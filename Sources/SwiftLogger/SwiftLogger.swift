@@ -40,7 +40,7 @@ public class SwiftLogger {
     private let formatter: DateFormatter
     private(set) public var level: SwiftLogger.Level
 
-    init(level : SwiftLogger.Level) {
+    public init(level : SwiftLogger.Level) {
         self.level = level
         self.formatter = DateFormatter.loggerDefault
     }
