@@ -38,14 +38,14 @@ public class SwiftLogger {
     }
 
     private let formatter: DateFormatter
-    private(set) public var level: Logger.Level
+    private(set) public var level: SwiftLogger.Level
 
-    init(level : Logger.Level) {
+    init(level : SwiftLogger.Level) {
         self.level = level
         self.formatter = DateFormatter.loggerDefault
     }
 
-    public func log(level: Logger.Level, message: String) {
+    public func log(level: SwiftLogger.Level, message: String) {
         if level >= self.level {
             print(level.prefix(formatter: formatter) + message)
         }
@@ -74,7 +74,7 @@ public class SwiftLogger {
 
 extension DateFormatter {
 
-    static var loggerDefault: DateFormatter {
+    public static var loggerDefault: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "[MM-dd|HH:mm:ss]"
 
